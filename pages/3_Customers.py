@@ -1,17 +1,13 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 
 st.set_page_config(page_title="Customers", layout="wide")
 
-# Load Data
-customers = pd.read_csv("data/customers.csv")
+CUSTOMERS_FILE = "data/customers.csv"
 
-# =========================
-# TITLE
-# =========================
+customers = pd.read_csv(CUSTOMERS_FILE)
 
-st.title("👥 Customer Analytics Dashboard")
+st.title("👥 Customer Management System")
 
 # =========================
 # KPI CARDS
@@ -24,94 +20,126 @@ with col1:
 
 with col2:
     if "Age" in customers.columns:
-        st.metric("🎂 Average Age", f"{customers['Age'].mean():.0f}")
+        st.metric(
+            "🎂 Average Age",
+            f"{customers['Age'].mean():.0f}"
+        )
 
 with col3:
-    if "Gender" in customers.columns:
-        top_gender = customers["Gender"].mode()[0]
-        st.metric("🚻 Majority Gender", top_gender)
+    st.metric(
+        "🆔 Customer Records",
+        len(customers)
+    )
 
 st.divider()
 
 # =========================
-# FILTERS
+# CRUD SECTION
 # =========================
 
-col1, col2 = st.columns(2)
+tab1, tab2 = st.tabs(
+    ["➕ Add Customer", "🗑 Delete Customer"]
+)
 
-with col1:
-    search = st.text_input(
-        "🔍 Search Customer",
-        placeholder="Search by Customer Name"
+# =========================
+# ADD CUSTOMER
+# =========================
+
+with tab1:
+
+    st.subheader("Add New Customer")
+
+    with st.form("customer_form"):
+
+        customer_id = st.text_input("Customer ID")
+        customer_name = st.text_input("Customer Name")
+
+        age = st.number_input(
+            "Age",
+            min_value=1,
+            max_value=100
+        )
+
+        submit = st.form_submit_button(
+            "Add Customer"
+        )
+
+        if submit:
+
+            new_customer = pd.DataFrame({
+                "Customer_ID": [customer_id],
+                "Name": [customer_name],
+                "Age": [age]
+            })
+
+            customers = pd.concat(
+                [customers, new_customer],
+                ignore_index=True
+            )
+
+            customers.to_csv(
+                CUSTOMERS_FILE,
+                index=False
+            )
+
+            st.success(
+                "Customer added successfully!"
+            )
+
+# =========================
+# DELETE CUSTOMER
+# =========================
+
+with tab2:
+
+    st.subheader("Delete Customer")
+
+    delete_customer = st.selectbox(
+        "Select Customer",
+        customers["Customer_ID"]
     )
 
-with col2:
-    if "Gender" in customers.columns:
-        gender = st.selectbox(
-            "🚻 Filter Gender",
-            ["All"] + sorted(customers["Gender"].unique().tolist())
+    if st.button("Delete Customer"):
+
+        customers = customers[
+            customers["Customer_ID"]
+            != delete_customer
+        ]
+
+        customers.to_csv(
+            CUSTOMERS_FILE,
+            index=False
         )
-    else:
-        gender = "All"
+
+        st.success(
+            "Customer deleted successfully!"
+        )
+
+st.divider()
 
 # =========================
-# FILTER LOGIC
+# SEARCH
 # =========================
+
+search = st.text_input(
+    "🔍 Search Customer"
+)
 
 filtered = customers.copy()
 
-if search and "Name" in customers.columns:
+if search:
+
     filtered = filtered[
-        filtered["Name"].astype(str).str.contains(
-            search,
-            case=False,
-            na=False
+        filtered.astype(str)
+        .apply(
+            lambda row:
+            row.str.contains(
+                search,
+                case=False
+            ).any(),
+            axis=1
         )
     ]
-
-if gender != "All":
-    filtered = filtered[
-        filtered["Gender"] == gender
-    ]
-
-# =========================
-# CHARTS
-# =========================
-
-col1, col2 = st.columns(2)
-
-with col1:
-    if "Gender" in customers.columns:
-        st.subheader("🚻 Gender Distribution")
-
-        gender_count = (
-            customers["Gender"]
-            .value_counts()
-            .reset_index()
-        )
-
-        gender_count.columns = ["Gender", "Count"]
-
-        fig = px.pie(
-            gender_count,
-            names="Gender",
-            values="Count",
-            hole=0.4
-        )
-
-        st.plotly_chart(fig, use_container_width=True)
-
-with col2:
-    if "Age" in customers.columns:
-        st.subheader("🎂 Age Distribution")
-
-        fig = px.histogram(
-            customers,
-            x="Age",
-            nbins=10
-        )
-
-        st.plotly_chart(fig, use_container_width=True)
 
 # =========================
 # CUSTOMER TABLE
@@ -119,18 +147,18 @@ with col2:
 
 st.subheader("📋 Customer Records")
 
-st.write(f"Showing **{len(filtered)}** customers")
-
 st.dataframe(
     filtered,
     use_container_width=True
 )
 
 # =========================
-# DOWNLOAD CSV
+# DOWNLOAD
 # =========================
 
-csv = filtered.to_csv(index=False).encode("utf-8")
+csv = filtered.to_csv(
+    index=False
+).encode("utf-8")
 
 st.download_button(
     "⬇ Download Customer Data",
