@@ -24,6 +24,7 @@ The Streamlit app uses the `pages` directory to separate each feature page:
 - `requirements.txt` - Python dependencies for running the app.
 - `data/books.csv`, `data/customers.csv`, `data/sales.csv` - Core datasets used by the dashboards.
 - `reports/customer_segments.csv` - Generated segmentation results displayed by the segmentation page.
+- `screenshots/` - Folder containing application screenshots and visual references.
 - `src/book_manager.py` - Book management utilities and logic.
 - `src/customer_manager.py` - Customer analytics utility functions.
 - `src/sales_manager.py` - Sales processing and aggregation helpers.
