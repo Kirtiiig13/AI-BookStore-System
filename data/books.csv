@@ -1,8 +1,9 @@
 Book_ID,Title,Author,Category,Price,Stock
-B001,Book_1,Author_1,AI,977,93
-B002,Book_2,Author_2,AI,941,49
-B003,Book_3,Author_3,AI,1061,94
-B004,Book_4,Author_4,Analytics,787,59
+Book_ID,Title,Author,Category,Price,Stock
+B001,Python Crash Course,Eric Matthes,Programming,899,50
+B002,Hands-On Machine Learning,Aurelien Geron,AI,1499,30
+B003,Deep Learning with Python,Francois Chollet,AI,1299,25
+B004,Data Science Handbook,Jake VanderPlas,Data Science,1199,40
 B005,Book_5,Author_5,Analytics,1289,81
 B006,Book_6,Author_6,Analytics,680,97
 B007,Book_7,Author_7,Data Science,594,83
