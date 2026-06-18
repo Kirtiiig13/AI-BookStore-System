@@ -9,9 +9,7 @@ st.set_page_config(page_title="AI Recommendations", layout="wide")
 # LOAD DATA
 # =========================
 
-from src.db_helper import get_books
-
-books = get_books()
+books = pd.read_csv("data/books.csv")
 
 # =========================
 # RECOMMENDATION FUNCTION

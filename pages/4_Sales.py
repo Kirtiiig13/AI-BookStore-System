@@ -15,11 +15,9 @@ CUSTOMERS_FILE = "data/customers.csv"
 # LOAD DATA
 # =========================
 
-from src.db_helper import get_books, get_customers, get_sales
-
-books = get_books()
-customers = get_customers()
-sales = get_sales()
+sales = pd.read_csv(SALES_FILE)
+books = pd.read_csv(BOOKS_FILE)
+customers = pd.read_csv(CUSTOMERS_FILE)
 
 # =========================
 # PAGE TITLE

@@ -8,9 +8,9 @@ st.set_page_config(page_title="Books Inventory", layout="wide")
 # LOAD DATA
 # =========================
 
-from src.db_helper import get_books
+BOOKS_FILE = "data/books.csv"
 
-books = get_books()
+books = pd.read_csv(BOOKS_FILE)
 
 # =========================
 # PAGE TITLE
