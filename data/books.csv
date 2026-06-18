@@ -1,0 +1,101 @@
+Book_ID,Title,Author,Category,Price,Stock
+B001,Book_1,Author_1,AI,977,93
+B002,Book_2,Author_2,AI,941,49
+B003,Book_3,Author_3,AI,1061,94
+B004,Book_4,Author_4,Analytics,787,59
+B005,Book_5,Author_5,Analytics,1289,81
+B006,Book_6,Author_6,Analytics,680,97
+B007,Book_7,Author_7,Data Science,594,83
+B008,Book_8,Author_8,Analytics,814,71
+B009,Book_9,Author_9,Data Science,1474,72
+B010,Book_10,Author_10,Programming,1040,18
+B011,Book_11,Author_11,Programming,1109,28
+B012,Book_12,Author_12,Analytics,697,49
+B013,Book_13,Author_13,Analytics,451,85
+B014,Book_14,Author_14,Analytics,307,45
+B015,Book_15,Author_15,Data Science,1331,77
+B016,Book_16,Author_16,Data Science,1481,12
+B017,Book_17,Author_17,Programming,900,78
+B018,Book_18,Author_18,Mathematics,563,67
+B019,Book_19,Author_19,AI,1309,99
+B020,Book_20,Author_20,Mathematics,1499,11
+B021,Book_21,Author_21,Database,823,92
+B022,Book_22,Author_22,Analytics,1353,54
+B023,Book_23,Author_23,Analytics,449,90
+B024,Book_24,Author_24,Mathematics,1282,60
+B025,Book_25,Author_25,Database,1379,39
+B026,Book_26,Author_26,Mathematics,859,62
+B027,Book_27,Author_27,AI,795,71
+B028,Book_28,Author_28,Programming,1270,69
+B029,Book_29,Author_29,Database,1405,96
+B030,Book_30,Author_30,Data Science,1431,46
+B031,Book_31,Author_31,Analytics,798,41
+B032,Book_32,Author_32,Analytics,816,39
+B033,Book_33,Author_33,Database,1323,20
+B034,Book_34,Author_34,Analytics,763,30
+B035,Book_35,Author_35,Programming,1178,45
+B036,Book_36,Author_36,Database,500,10
+B037,Book_37,Author_37,Analytics,1199,20
+B038,Book_38,Author_38,Data Science,1172,15
+B039,Book_39,Author_39,Data Science,1132,76
+B040,Book_40,Author_40,Data Science,1000,35
+B041,Book_41,Author_41,Analytics,1244,37
+B042,Book_42,Author_42,Analytics,1339,38
+B043,Book_43,Author_43,Analytics,828,75
+B044,Book_44,Author_44,Analytics,1380,14
+B045,Book_45,Author_45,AI,963,51
+B046,Book_46,Author_46,Mathematics,1186,88
+B047,Book_47,Author_47,Analytics,1104,98
+B048,Book_48,Author_48,Mathematics,441,12
+B049,Book_49,Author_49,Database,826,86
+B050,Book_50,Author_50,Database,1309,33
+B051,Book_51,Author_51,AI,1493,67
+B052,Book_52,Author_52,Programming,1324,85
+B053,Book_53,Author_53,AI,948,80
+B054,Book_54,Author_54,AI,1374,22
+B055,Book_55,Author_55,Analytics,1340,75
+B056,Book_56,Author_56,Mathematics,990,19
+B057,Book_57,Author_57,AI,1448,24
+B058,Book_58,Author_58,Analytics,1286,31
+B059,Book_59,Author_59,Mathematics,1008,49
+B060,Book_60,Author_60,Mathematics,650,16
+B061,Book_61,Author_61,AI,641,32
+B062,Book_62,Author_62,Database,740,32
+B063,Book_63,Author_63,Programming,433,25
+B064,Book_64,Author_64,AI,720,65
+B065,Book_65,Author_65,AI,339,52
+B066,Book_66,Author_66,Data Science,1191,98
+B067,Book_67,Author_67,Data Science,524,63
+B068,Book_68,Author_68,Programming,1341,11
+B069,Book_69,Author_69,Data Science,775,60
+B070,Book_70,Author_70,AI,792,37
+B071,Book_71,Author_71,AI,629,61
+B072,Book_72,Author_72,Programming,1172,96
+B073,Book_73,Author_73,AI,630,46
+B074,Book_74,Author_74,Data Science,507,19
+B075,Book_75,Author_75,Database,652,74
+B076,Book_76,Author_76,Mathematics,634,54
+B077,Book_77,Author_77,Mathematics,720,38
+B078,Book_78,Author_78,Mathematics,1422,16
+B079,Book_79,Author_79,Analytics,347,23
+B080,Book_80,Author_80,Database,409,74
+B081,Book_81,Author_81,Data Science,859,70
+B082,Book_82,Author_82,Mathematics,331,45
+B083,Book_83,Author_83,AI,549,67
+B084,Book_84,Author_84,AI,337,96
+B085,Book_85,Author_85,Database,370,48
+B086,Book_86,Author_86,Database,734,72
+B087,Book_87,Author_87,Programming,1056,88
+B088,Book_88,Author_88,Mathematics,595,47
+B089,Book_89,Author_89,Analytics,1065,77
+B090,Book_90,Author_90,Database,1436,41
+B091,Book_91,Author_91,Mathematics,1140,66
+B092,Book_92,Author_92,Mathematics,1000,37
+B093,Book_93,Author_93,Data Science,642,25
+B094,Book_94,Author_94,Mathematics,1314,36
+B095,Book_95,Author_95,Mathematics,724,28
+B096,Book_96,Author_96,Analytics,1494,10
+B097,Book_97,Author_97,Analytics,1268,88
+B098,Book_98,Author_98,AI,962,100
+B099,Book_99,Author_99,AI,815,77
+B100,Book_100,Author_100,Data Science,1483,89
