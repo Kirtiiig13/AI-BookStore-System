@@ -3,9 +3,9 @@ import pandas as pd
 
 st.set_page_config(page_title="Customers", layout="wide")
 
-CUSTOMERS_FILE = "data/customers.csv"
+from src.db_helper import get_books, get_customers
 
-customers = pd.read_csv(CUSTOMERS_FILE)
+customers = get_customers()
 
 st.title("👥 Customer Management System")
 
